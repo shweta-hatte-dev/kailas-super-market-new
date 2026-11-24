@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-cream font-sans text-ink antialiased; overflow-x: clip; }
+  h1, h2, h3 { @apply font-display text-forest; font-optical-sizing: auto; }
+  section[id] { scroll-margin-top: 76px; }
+  :focus-visible { outline: 2px solid #173F2B; outline-offset: 2px; }
+  .on-dark :focus-visible { outline-color: #C6A66B; }
+  button { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+  .btn { @apply inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md px-5 py-2.5 text-[15px] font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply bg-forest text-cream hover:bg-leaf-dark; }
+  .btn-outline { @apply border border-forest/35 text-forest hover:border-forest hover:bg-forest/5; }
+  .btn-gold { @apply bg-gold text-forest hover:bg-[#d3b57d]; }
+  .field { @apply w-full rounded-md border border-forest/25 bg-white px-3 py-2.5 text-base text-ink placeholder:text-ink/50 focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20; }
+  .chip { @apply inline-flex min-h-[40px] items-center whitespace-nowrap rounded-full border border-forest/25 bg-white px-4 text-sm font-medium text-forest transition-colors hover:border-forest; }
+  .chip[aria-pressed='true'], .chip[aria-selected='true'] { @apply border-forest bg-forest text-cream; }
+  /* shelf-edge price tag: the one recurring shape of the site */
+  .price-tag { @apply inline-flex items-baseline gap-1.5 bg-gold-tint py-0.5 pl-3.5 pr-2 font-semibold text-forest; clip-path: polygon(9px 0, 100% 0, 100% 100%, 9px 100%, 0 50%); }
+  .scroll-row { @apply flex snap-x snap-mandatory gap-3 overflow-x-auto pb-3; scrollbar-width: thin; }
+  .scroll-row > * { @apply snap-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
