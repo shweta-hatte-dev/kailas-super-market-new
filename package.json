@@ -1,3 +1,4 @@
+
 {
   "name": "kailas-super-market",
   "private": true,
@@ -13,8 +14,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "photos": "tsx scripts/fetch-photos.ts",
-    "photos:check": "tsx scripts/check-photos.ts",
-    
+    "photos:check": "tsx scripts/check-photos.ts"
   },
   "dependencies": {
     "@fontsource-variable/figtree": "^5.1.0",
