@@ -14,7 +14,7 @@
     "test": "vitest run",
     "photos": "tsx scripts/fetch-photos.ts",
     "photos:check": "tsx scripts/check-photos.ts",
-    "prebuild": "tsx scripts/fetch-photos.ts --ci"
+    
   },
   "dependencies": {
     "@fontsource-variable/figtree": "^5.1.0",
